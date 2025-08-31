@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W Sports - Live TV Streaming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-tv"></i>
+                <h1>W Sports</h1>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search channels..." onkeyup="searchChannels()">
+                </div>
+            </div>
+            <div class="header-controls">
+                <button id="fullscreenBtn" class="control-btn">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button id="pipButton" class="control-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Video Player Section -->
+        <section class="video-section">
+            <div id="videoContainer" class="video-container">
+                <video id="video" controls autoplay muted>
+                    <p>Your browser doesn't support HTML5 video.</p>
+                </video>
+                <div class="video-overlay">
+                    <div class="loading-spinner" id="loadingSpinner">
+                        <div class="spinner"></div>
+                        <p>Loading channel...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slideshow Section -->
+        <section class="slideshow-section">
+            <div class="slideshow-container">
+                <div class="slideshow-slide active">
+                    <div class="slide-content">
+                        <h2>Premium Sports Channels</h2>
+                        <p>Watch live sports from around the world</p>
+                    </div>
+                </div>
+                <div class="slideshow-slide">
+                    <div class="slide-content">
+                        <h2>Entertainment & Movies</h2>
+                        <p>Latest movies and entertainment shows</p>
+                    </div>
+                </div>
+                <div class="slideshow-slide">
+                    <div class="slide-content">
+                        <h2>News & Documentaries</h2>
+                        <p>Stay informed with global news</p>
+                    </div>
+                </div>
+                <div class="slideshow-slide">
+                    <div class="slide-content">
+                        <h2>Kids & Family</h2>
+                        <p>Family-friendly content for all ages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slideshow-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </section>
+
+        <!-- Channels Section -->
+        <section class="channels-section">
+            <div class="channels-header">
+                <h2>Live Channels</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" onclick="toggleView('grid')">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-btn" onclick="toggleView('list')">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="channels-container">
+                <ul id="channelList" class="channel-list grid-view">
+                    <!-- Channels will be populated by JavaScript -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 W Sports. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shaka Player Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.compiled.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
