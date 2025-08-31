@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>W Sports - Live TV</title>
+    <meta name="description" content="W Sports - Responsive Live TV Web App with Shaka Player">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <!-- Shaka Player + UI Controls -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.9.2/dist/controls.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/shaka-player@4.9.2/dist/shaka-player.compiled.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/shaka-player@4.9.2/dist/shaka-player.ui.min.js"></script>
+</head>
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <div class="logo">W</div>
+            <div class="brand-text">
+                <h1>W Sports</h1>
+                <span>Live TV</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <div class="search">
+                <input id="searchInput" type="search" placeholder="Tafuta channel..." autocomplete="off" />
+            </div>
+            <button id="pipButton" class="btn ghost" title="Picture-in-Picture">PiP</button>
+        </div>
+    </header>
+
+    <section class="hero-slider" aria-label="Matukio">
+        <div class="slides">
+            <div class="slide s1">
+                <div class="slide-overlay">
+                    <h2>Michezo Mubashara</h2>
+                    <p>Tazama mechi na matukio makubwa papo hapo.</p>
+                </div>
+            </div>
+            <div class="slide s2">
+                <div class="slide-overlay">
+                    <h2>Burudani Bomba</h2>
+                    <p>Sinema, series, na chaneli za kibabe.</p>
+                </div>
+            </div>
+            <div class="slide s3">
+                <div class="slide-overlay">
+                    <h2>Habari na Maarifa</h2>
+                    <p>Habari, documentary, na elimu kila siku.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots" role="tablist" aria-label="Vidokezo vya slaidi">
+            <button class="dot active" data-index="0" aria-label="Slaidi 1"></button>
+            <button class="dot" data-index="1" aria-label="Slaidi 2"></button>
+            <button class="dot" data-index="2" aria-label="Slaidi 3"></button>
+        </div>
+    </section>
+
+    <main class="app-main">
+        <section class="player-section">
+            <div id="videoContainer" class="video-container">
+                <video id="video" class="video" autoplay playsinline controls></video>
+                <div id="loader" class="loader hidden" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section class="channels-section">
+            <h3>Vituo vyote</h3>
+            <ul id="channelList" class="channel-list" aria-live="polite"></ul>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <span>© <span id="year"></span> W Sports</span>
+    </footer>
+
+    <script defer src="./assets/js/channels.js"></script>
+    <script defer src="./assets/js/app.js"></script>
+</body>
+<!--
+  W Sports - Responsive Live TV Web App
+  - Shaka Player for DASH ClearKey streams
+  - Modern slideshow, responsive grid, search & PiP
+-->
+</html>
+
